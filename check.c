@@ -36,12 +36,3 @@ int highest_pair(card *ptr) {
 
 	return result;
 }
-
-bool pair(card *ptr) {
-	// returns true if there's any kind of pair
-	if (highest_pair(ptr) > 1) {
-		return true;
-	} else {
-		return false;
-	}
-}

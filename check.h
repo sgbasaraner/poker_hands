@@ -3,8 +3,6 @@
 
 #include <stdbool.h>
 
-bool pair(card *ptr);
-
 int highest_pair(card *ptr);
 
 #endif

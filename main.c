@@ -32,5 +32,9 @@ int main(int argc, char *argv[]) {
    	}
 
    	card *ptr = hand;
-   	printf("%i\n", highest_pair(ptr));
+   	if (highest_pair(ptr) == 2) {
+   		printf("There's a pair\n");
+   	} else {
+   		printf("There isn't a pair\n");
+   	}
 }
