@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "check.c"
+#include "card.h"
+#include "check.h"
 
 int main(int argc, char *argv[]) {
 	printf("Input the hand in this format: Ac, Tc, Kd, 3d, 7s\n");
@@ -31,5 +32,5 @@ int main(int argc, char *argv[]) {
    	}
 
    	card *ptr = hand;
-   	per(ptr);
+   	printf("%i\n", per_count(ptr));
 }
