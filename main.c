@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "card.h"
+#include "check.c"
 
 int main(int argc, char *argv[]) {
 	printf("Input the hand in this format: Ac, Tc, Kd, 3d, 7s\n");
@@ -30,7 +30,6 @@ int main(int argc, char *argv[]) {
    		hand[i] = tmp;
    	}
 
-   	for (int i = 0; i < 5; i++) {
-   		printf("%c,%c\n", hand[i].rank, hand[i].color);
-   	}
+   	card *ptr = hand;
+   	per(ptr);
 }
