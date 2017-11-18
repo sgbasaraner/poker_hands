@@ -10,30 +10,27 @@ bool per(card *ptr) {
 	return false;
 }
 
-int per_count(card *ptr) {
-	int8_t counts[13], tmp;
-	for (int i = 0; i < 5; ++i) {
-		switch((ptr + i) -> rank) {
+int8_t convert_rank(char rank) {
+	switch(rank) {
       		case 'A':
-      			counts[12]++;
-      			break;
+      			return 12;
       		case 'K':
-      			counts[11]++;
-      			break;
+      			return 11;
       		case 'Q':
-      			counts[10]++;
-      			break;
-      		case 'J':
-      			counts[9]++;
-      			break;
+      			return 10;
+       		case 'J':
+      			return 9;
       		case 'T':
-      			counts[8]++;
-      			break;
+      			return 8;
       		default :
-      			tmp = (((ptr + i) -> rank) - '0') - 2;
-      			counts[tmp]++;
-      			break;
+      			return (rank - '0') - 2;
    		}
+}
+
+int per_count(card *ptr) {
+	int8_t counts[13];
+	for (int i = 0; i < 5; ++i) {
+   		counts[convert_rank((ptr + i) -> rank)]++;
 	}
 
 	int8_t result = 0;
