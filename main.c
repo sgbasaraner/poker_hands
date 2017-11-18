@@ -11,8 +11,15 @@ int main(int argc, char *argv[]) {
 	const char separator[3] = ", ";
    	char *token;
    	token = strtok(user_input, separator);
+   	char hand[5][3];
+   	int tmp = 0;
    	while (token != NULL) {
-    	printf("%s\n", token);
+   		printf("%i.%s\n", tmp + 1, token);
+   		strcpy(hand[tmp], token);
       	token = strtok(NULL, separator);
+      	tmp++;
+   	}
+   	for (int i = 0; i < 5; i++) {
+   		printf("%s\n", hand[i]);
    	}
 }
