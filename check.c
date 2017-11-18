@@ -1,5 +1,6 @@
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdint.h>
 #include "card.h"
 
 bool per(card *ptr) {
@@ -10,7 +11,7 @@ bool per(card *ptr) {
 }
 
 int per_count(card *ptr) {
-	int counts[13], tmp;
+	int8_t counts[13], tmp;
 	for (int i = 0; i < 5; ++i) {
 		switch((ptr + i) -> rank) {
       		case 'A':
@@ -29,17 +30,19 @@ int per_count(card *ptr) {
       			counts[8]++;
       			break;
       		default :
-      			tmp = ((ptr + i) -> rank) - 2;
+      			tmp = (((ptr + i) -> rank) - '0') - 2;
       			counts[tmp]++;
       			break;
    		}
 	}
 
-	int result = 0;
+	int8_t result = 0;
 	for (int i = 0; i < 13; ++i) {
+		printf("%i\n", counts[i]);
 		if (counts[i] > result) {
 			result = counts[i];
 		}
 	}
+
 	return result;
 }
