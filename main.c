@@ -32,5 +32,5 @@ int main(int argc, char *argv[]) {
    	}
 
    	card *ptr = hand;
-   	printf("%i\n", per_count(ptr));
+   	printf("%i\n", highest_pair(ptr));
 }

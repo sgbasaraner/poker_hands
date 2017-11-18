@@ -3,13 +3,6 @@
 #include <stdint.h>
 #include "card.h"
 
-bool per(card *ptr) {
-	for (int i = 0; i < 5; ++i) {
-		printf("%i.%c%c\n", i, (ptr + i) -> rank, (ptr + i) -> color);
-	}
-	return false;
-}
-
 int8_t convert_rank(char rank) {
 	switch(rank) {
   		case 'A':
@@ -27,7 +20,7 @@ int8_t convert_rank(char rank) {
 	}
 }
 
-int per_count(card *ptr) {
+int highest_pair(card *ptr) {
 	int8_t counts[13];
 	for (int i = 0; i < 5; ++i) {
    		counts[convert_rank((ptr + i) -> rank)]++;
@@ -42,4 +35,13 @@ int per_count(card *ptr) {
 	}
 
 	return result;
+}
+
+bool pair(card *ptr) {
+	// returns true if there's any kind of pair
+	if (highest_pair(ptr) > 1) {
+		return true;
+	} else {
+		return false;
+	}
 }

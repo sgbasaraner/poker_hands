@@ -3,8 +3,8 @@
 
 #include <stdbool.h>
 
-bool per(card *ptr);
+bool pair(card *ptr);
 
-int per_count(card *ptr);
+int highest_pair(card *ptr);
 
 #endif
