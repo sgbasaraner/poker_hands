@@ -7,7 +7,7 @@ int main(int argc, char *argv[]) {
 	char user_input[18];
 	fgets(user_input, 19, stdin);
 
-	// separate user input by comma
+	// separate user input by comma and add separated values to a hand array
 	const char separator[3] = ", ";
    	char *token;
    	token = strtok(user_input, separator);
