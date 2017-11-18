@@ -21,6 +21,7 @@ int main(int argc, char *argv[]) {
       	tmp++;
    	}
 
+   	// parse input to an array of cards
    	card hand[5];
    	for (int i = 0; i < 5; i++) {
    		card tmp;
