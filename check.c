@@ -12,19 +12,19 @@ bool per(card *ptr) {
 
 int8_t convert_rank(char rank) {
 	switch(rank) {
-      		case 'A':
-      			return 12;
-      		case 'K':
-      			return 11;
-      		case 'Q':
-      			return 10;
-       		case 'J':
-      			return 9;
-      		case 'T':
-      			return 8;
-      		default :
-      			return (rank - '0') - 2;
-   		}
+  		case 'A':
+  			return 12;
+  		case 'K':
+  			return 11;
+  		case 'Q':
+  			return 10;
+   		case 'J':
+  			return 9;
+  		case 'T':
+  			return 8;
+  		default :
+  			return (rank - '0') - 2;
+	}
 }
 
 int per_count(card *ptr) {
