@@ -243,6 +243,9 @@ bool flush(card *ptr) {
 }
 
 bool straight_flush(card *ptr) {
+	if (straight(ptr) && flush(ptr)) {
+		return true;
+	}
 	return false;
 }
 
