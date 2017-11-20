@@ -79,3 +79,31 @@ bool one_pair(card *ptr) {
 
 	return false;
 }
+
+bool two_pair(card *ptr) {
+	int8_t counts[13];
+	for (int i = 0; i < 5; ++i) {
+   		counts[convert_rank((ptr + i) -> rank)]++;
+	}
+
+
+	bool first_pair = false;
+	bool second_pair = false;
+
+	for (int i = 0; i < 13; ++i) {
+		if (counts[i] == 2) {
+			first_pair = true;
+			continue;
+		}
+
+		if (counts[i] == 2 && first_pair) {
+			second_pair = true;
+		}
+	}
+
+	if (first_pair && second_pair) {
+		return true;
+	}
+
+	return false;
+}
