@@ -8,5 +8,6 @@ char highest_card(card *ptr);
 bool one_pair(card *ptr);
 bool two_pair(card *ptr);
 bool three_kind(card *ptr);
+bool four_kind(card *ptr);
 
 #endif
