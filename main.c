@@ -37,4 +37,6 @@ int main(int argc, char *argv[]) {
    	} else {
    		printf("There isn't a pair\n");
    	}
+
+   	printf("The highest card is: %c\n", highest_card(ptr));
 }
