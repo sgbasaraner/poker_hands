@@ -250,5 +250,29 @@ bool straight_flush(card *ptr) {
 }
 
 bool royal_flush(card *ptr) {
+	if (!flush(ptr)) {
+		return false;
+	}
+
+	int8_t ranks[5];
+	for (int i = 0; i < 5; ++i) {
+		ranks[i] = convert_rank((ptr + i) -> rank);
+	}
+
+	// bubble sort
+	for (int i = 0; i < 4; ++i) {
+		for (int j = 0; j < 4 - i; ++j) {
+			if (ranks[j] > ranks[j + 1]) {
+				int8_t tmp = ranks[j + 1];
+				ranks[j + 1] = ranks[j];
+				ranks[j] = tmp;
+			}
+		}
+	}
+
+	if ((ranks[0] == 8) && straight(ptr)) {
+		return true;
+	}	
+
 	return false;
 }
