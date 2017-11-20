@@ -10,5 +10,9 @@ bool two_pair(card *ptr);
 bool three_kind(card *ptr);
 bool four_kind(card *ptr);
 bool full_house(card *ptr);
+bool straight(card *ptr);
+bool flush(card *ptr);
+bool royal_flush(card *ptr);
+bool straight_flush(card *ptr);
 
 #endif

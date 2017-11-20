@@ -163,3 +163,19 @@ bool full_house(card *ptr) {
 
 	return false;
 }
+
+bool straight(card *ptr) {
+	return false;
+}
+
+bool flush(card *ptr) {
+	return false;
+}
+
+bool straight_flush(card *ptr) {
+	return false;
+}
+
+bool royal_flush(card *ptr) {
+	return false;
+}
