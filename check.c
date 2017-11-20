@@ -72,7 +72,7 @@ bool one_pair(card *ptr) {
 	}
 
 	for (int i = 0; i < 13; ++i) {
-		if (counts[i] = 2) {
+		if (counts[i] == 2) {
 			return true;
 		}
 	}
