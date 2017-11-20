@@ -20,6 +20,23 @@ int8_t convert_rank(char rank) {
 	}
 }
 
+char convert_back(int8_t rank) {
+	switch(rank) {
+		case 12:
+			return 'A';
+		case 11:
+			return 'K';
+		case 10:
+			return 'Q';
+		case 9:
+			return 'J';
+		case 8:
+			return 'T';
+		default:
+			return (rank + 2) + '0';
+	}
+}
+
 int highest_pair(card *ptr) {
 	int8_t counts[13];
 	for (int i = 0; i < 5; ++i) {
