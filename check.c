@@ -53,3 +53,14 @@ int highest_pair(card *ptr) {
 
 	return result;
 }
+
+char highest_card(card *ptr) {
+	int8_t highest = 0;
+	for (int i = 0; i < 5; ++i) {
+		int8_t tmp = convert_rank((ptr + i) -> rank);
+		if (tmp > highest) {
+			highest = tmp;
+		}
+	}
+	return convert_back(highest);
+}
