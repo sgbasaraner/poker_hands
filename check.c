@@ -137,3 +137,29 @@ bool four_kind(card *ptr) {
 
 	return false;
 }
+
+bool full_house(card *ptr) {
+	int8_t counts[13];
+	for (int i = 0; i < 5; ++i) {
+   		counts[convert_rank((ptr + i) -> rank)]++;
+	}
+
+	bool pair = false;
+	bool three_kind = false;
+
+	for (int i = 0; i < 13; ++i) {
+		if (counts[i] == 2) {
+			pair = true;
+		}
+
+		if (counts[i] == 3) {
+			three_kind = true;
+		}
+	}
+
+	if (pair && three_kind) {
+		return true;
+	}
+
+	return false;
+}
