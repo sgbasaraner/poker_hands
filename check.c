@@ -20,7 +20,7 @@ int8_t convert_rank(char rank) {
 	}
 }
 
-char convert_back(int8_t rank) {
+char convert_rank_back(int8_t rank) {
 	switch(rank) {
 		case 12:
 			return 'A';
