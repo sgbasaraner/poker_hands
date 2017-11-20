@@ -99,7 +99,7 @@ char highest_card(card *ptr) {
 }
 
 bool one_pair(card *ptr) {
-	int8_t counts[13];
+	int8_t counts[13] = {0};
 	for (int i = 0; i < 5; ++i) {
    		counts[convert_rank((ptr + i) -> rank)]++;
 	}
@@ -114,7 +114,7 @@ bool one_pair(card *ptr) {
 }
 
 bool two_pair(card *ptr) {
-	int8_t counts[13];
+	int8_t counts[13] = {0};
 	for (int i = 0; i < 5; ++i) {
    		counts[convert_rank((ptr + i) -> rank)]++;
 	}
@@ -142,7 +142,7 @@ bool two_pair(card *ptr) {
 }
 
 bool three_kind(card *ptr) {
-	int8_t counts[13];
+	int8_t counts[13] = {0};
 	for (int i = 0; i < 5; ++i) {
    		counts[convert_rank((ptr + i) -> rank)]++;
 	}
@@ -157,7 +157,7 @@ bool three_kind(card *ptr) {
 }
 
 bool four_kind(card *ptr) {
-	int8_t counts[13];
+	int8_t counts[13] = {0};
 	for (int i = 0; i < 5; ++i) {
    		counts[convert_rank((ptr + i) -> rank)]++;
 	}
@@ -172,7 +172,7 @@ bool four_kind(card *ptr) {
 }
 
 bool full_house(card *ptr) {
-	int8_t counts[13];
+	int8_t counts[13] = {0};
 	for (int i = 0; i < 5; ++i) {
    		counts[convert_rank((ptr + i) -> rank)]++;
 	}
@@ -246,6 +246,7 @@ bool straight_flush(card *ptr) {
 	if (straight(ptr) && flush(ptr)) {
 		return true;
 	}
+
 	return false;
 }
 
@@ -273,6 +274,6 @@ bool royal_flush(card *ptr) {
 	if ((ranks[0] == 8) && straight(ptr)) {
 		return true;
 	}	
-
+	
 	return false;
 }
