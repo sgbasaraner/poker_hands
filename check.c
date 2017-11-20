@@ -95,7 +95,7 @@ char highest_card(card *ptr) {
 			highest = tmp;
 		}
 	}
-	return convert_back(highest);
+	return convert_rank_back(highest);
 }
 
 bool one_pair(card *ptr) {
@@ -202,7 +202,14 @@ bool straight(card *ptr) {
 }
 
 bool flush(card *ptr) {
-	return false;
+	char color = ptr -> color;
+	for (int i = 0; i < 5; ++i) {
+		if (color != ((ptr + i) -> color)) {
+			return false;
+		}
+	}
+
+	return true;
 }
 
 bool straight_flush(card *ptr) {
