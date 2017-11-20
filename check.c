@@ -1,6 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <stdlib.h>
 #include "card.h"
 
 int8_t convert_rank(char rank) {
@@ -34,6 +35,38 @@ char convert_rank_back(int8_t rank) {
 			return 'T';
 		default:
 			return (rank + 2) + '0';
+	}
+}
+
+int8_t convert_color(char color) {
+	switch(color) {
+  		case 'c':
+  			return 3;
+  		case 'd':
+  			return 2;
+  		case 'h':
+  			return 1;
+   		case 's':
+  			return 0;
+  		default:
+  			printf("Failed to convert color\n");
+  			exit(1);
+	}
+}
+
+char convert_color_back(int8_t color) {
+	switch(color) {
+  		case 3:
+  			return 'c';
+  		case 2:
+  			return 'd';
+  		case 1:
+  			return 'h';
+   		case 0:
+  			return 's';
+  		default:
+  			printf("Failed to convert color back\n");
+  			exit(1);
 	}
 }
 
