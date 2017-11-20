@@ -64,3 +64,18 @@ char highest_card(card *ptr) {
 	}
 	return convert_back(highest);
 }
+
+bool one_pair(card *ptr) {
+	int8_t counts[13];
+	for (int i = 0; i < 5; ++i) {
+   		counts[convert_rank((ptr + i) -> rank)]++;
+	}
+
+	for (int i = 0; i < 13; ++i) {
+		if (counts[i] = 2) {
+			return true;
+		}
+	}
+
+	return false;
+}
