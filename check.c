@@ -107,3 +107,18 @@ bool two_pair(card *ptr) {
 
 	return false;
 }
+
+bool three_kind(card *ptr) {
+	int8_t counts[13];
+	for (int i = 0; i < 5; ++i) {
+   		counts[convert_rank((ptr + i) -> rank)]++;
+	}
+
+	for (int i = 0; i < 13; ++i) {
+		if (counts[i] == 3) {
+			return true;
+		}
+	}
+
+	return false;
+}
