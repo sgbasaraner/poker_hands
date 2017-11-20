@@ -33,8 +33,8 @@ int main(int argc, char *argv[]) {
 
    	card *ptr = hand;
 
-   	if (flush(ptr)) {
-   		printf("FLUSH!!!\n");
+   	if (straight(ptr)) {
+   		printf("STRAIGHT!!!\n");
    	}
 
    	printf("The highest card is: %c\n", highest_card(ptr));

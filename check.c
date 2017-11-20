@@ -198,7 +198,37 @@ bool full_house(card *ptr) {
 }
 
 bool straight(card *ptr) {
-	return false;
+	int8_t ranks[5];
+	for (int i = 0; i < 5; ++i) {
+		ranks[i] = convert_rank((ptr + i) -> rank);
+	}
+
+	// bubble sort
+	for (int i = 0; i < 4; ++i) {
+		for (int j = 0; j < 4 - i; ++j) {
+			if (ranks[j] > ranks[j + 1]) {
+				int8_t tmp = ranks[j + 1];
+				ranks[j + 1] = ranks[j];
+				ranks[j] = tmp;
+			}
+		}
+	}
+
+	if (ranks[4] != 12) {	
+		for (int i = 0; i < 4; ++i) {
+			if (ranks[i] + 1 != ranks[i + 1]) {
+				return false;
+			}
+		}
+	} else {
+		for (int i = 0; i < 3; ++i) {
+			if (ranks[i] + 1 != ranks[i + 1]) {
+				return false;
+			}
+		}
+	}
+
+	return true;
 }
 
 bool flush(card *ptr) {
