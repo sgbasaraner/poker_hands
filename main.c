@@ -34,7 +34,23 @@ int main(int argc, char *argv[]) {
    	card *ptr = hand;
 
    	if (royal_flush(ptr)) {
-   		printf("ROYAL FLUSH!!!\n");
+   		printf("ROYAL FLUSH\n");
+   	} else if (straight_flush(ptr)) {
+   		printf("STRAIGHT FLUSH\n");
+   	} else if (four_kind(ptr)) {
+   		printf("FOUR OF A KIND\n");
+   	} else if (full_house(ptr)) {
+   		printf("FULL HOUSE\n");
+   	} else if (flush(ptr)) {
+   		printf("FLUSH\n");
+   	} else if (straight(ptr)) {
+   		printf("STRAIGHT\n");
+   	} else if (three_kind(ptr)) {
+   		printf("THREE OF A KIND\n");
+   	} else if (two_pair(ptr)) {
+   		printf("TWO PAIRS\n");
+   	} else if (one_pair(ptr)) {
+   		printf("A PAIR\n");
    	}
 
    	printf("The highest card is: %c\n", highest_card(ptr));
